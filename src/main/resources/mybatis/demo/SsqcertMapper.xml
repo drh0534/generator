@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lecar.freecar.mapper.demo.SsqcertMapper">
+  <resultMap id="BaseResultMap" type="com.lecar.freecar.model.demo.Ssqcert">
+    <id column="C_ID" jdbcType="CHAR" property="cId" />
+    <result column="C_CORP_ID" jdbcType="CHAR" property="cCorpId" />
+    <result column="C_USER_ID" jdbcType="CHAR" property="cUserId" />
+    <result column="C_USER_IDCARD" jdbcType="CHAR" property="cUserIdcard" />
+    <result column="V_USER_NAME" jdbcType="VARCHAR" property="vUserName" />
+    <result column="C_USER_MOBILE" jdbcType="CHAR" property="cUserMobile" />
+    <result column="N_REG_FLAG" jdbcType="DECIMAL" property="nRegFlag" />
+    <result column="N_AGENT_FLAG" jdbcType="DECIMAL" property="nAgentFlag" />
+    <result column="N_PERSONAL_FLAG" jdbcType="DECIMAL" property="nPersonalFlag" />
+    <result column="N_CERT_STATUS" jdbcType="DECIMAL" property="nCertStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    C_ID, C_CORP_ID, C_USER_ID, C_USER_IDCARD, V_USER_NAME, C_USER_MOBILE, N_REG_FLAG, 
+    N_AGENT_FLAG, N_PERSONAL_FLAG, N_CERT_STATUS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from HT_CONTRACT_SSQCERT_INFO
+    where C_ID = #{cId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from HT_CONTRACT_SSQCERT_INFO
+    where C_ID = #{cId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lecar.freecar.model.demo.Ssqcert">
+    insert into HT_CONTRACT_SSQCERT_INFO (C_ID, C_CORP_ID, C_USER_ID, 
+      C_USER_IDCARD, V_USER_NAME, C_USER_MOBILE, 
+      N_REG_FLAG, N_AGENT_FLAG, N_PERSONAL_FLAG, 
+      N_CERT_STATUS)
+    values (#{cId,jdbcType=CHAR}, #{cCorpId,jdbcType=CHAR}, #{cUserId,jdbcType=CHAR}, 
+      #{cUserIdcard,jdbcType=CHAR}, #{vUserName,jdbcType=VARCHAR}, #{cUserMobile,jdbcType=CHAR}, 
+      #{nRegFlag,jdbcType=DECIMAL}, #{nAgentFlag,jdbcType=DECIMAL}, #{nPersonalFlag,jdbcType=DECIMAL}, 
+      #{nCertStatus,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lecar.freecar.model.demo.Ssqcert">
+    insert into HT_CONTRACT_SSQCERT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        C_ID,
+      </if>
+      <if test="cCorpId != null">
+        C_CORP_ID,
+      </if>
+      <if test="cUserId != null">
+        C_USER_ID,
+      </if>
+      <if test="cUserIdcard != null">
+        C_USER_IDCARD,
+      </if>
+      <if test="vUserName != null">
+        V_USER_NAME,
+      </if>
+      <if test="cUserMobile != null">
+        C_USER_MOBILE,
+      </if>
+      <if test="nRegFlag != null">
+        N_REG_FLAG,
+      </if>
+      <if test="nAgentFlag != null">
+        N_AGENT_FLAG,
+      </if>
+      <if test="nPersonalFlag != null">
+        N_PERSONAL_FLAG,
+      </if>
+      <if test="nCertStatus != null">
+        N_CERT_STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=CHAR},
+      </if>
+      <if test="cCorpId != null">
+        #{cCorpId,jdbcType=CHAR},
+      </if>
+      <if test="cUserId != null">
+        #{cUserId,jdbcType=CHAR},
+      </if>
+      <if test="cUserIdcard != null">
+        #{cUserIdcard,jdbcType=CHAR},
+      </if>
+      <if test="vUserName != null">
+        #{vUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="cUserMobile != null">
+        #{cUserMobile,jdbcType=CHAR},
+      </if>
+      <if test="nRegFlag != null">
+        #{nRegFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nAgentFlag != null">
+        #{nAgentFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nPersonalFlag != null">
+        #{nPersonalFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nCertStatus != null">
+        #{nCertStatus,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lecar.freecar.model.demo.Ssqcert">
+    update HT_CONTRACT_SSQCERT_INFO
+    <set>
+      <if test="cCorpId != null">
+        C_CORP_ID = #{cCorpId,jdbcType=CHAR},
+      </if>
+      <if test="cUserId != null">
+        C_USER_ID = #{cUserId,jdbcType=CHAR},
+      </if>
+      <if test="cUserIdcard != null">
+        C_USER_IDCARD = #{cUserIdcard,jdbcType=CHAR},
+      </if>
+      <if test="vUserName != null">
+        V_USER_NAME = #{vUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="cUserMobile != null">
+        C_USER_MOBILE = #{cUserMobile,jdbcType=CHAR},
+      </if>
+      <if test="nRegFlag != null">
+        N_REG_FLAG = #{nRegFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nAgentFlag != null">
+        N_AGENT_FLAG = #{nAgentFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nPersonalFlag != null">
+        N_PERSONAL_FLAG = #{nPersonalFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="nCertStatus != null">
+        N_CERT_STATUS = #{nCertStatus,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where C_ID = #{cId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lecar.freecar.model.demo.Ssqcert">
+    update HT_CONTRACT_SSQCERT_INFO
+    set C_CORP_ID = #{cCorpId,jdbcType=CHAR},
+      C_USER_ID = #{cUserId,jdbcType=CHAR},
+      C_USER_IDCARD = #{cUserIdcard,jdbcType=CHAR},
+      V_USER_NAME = #{vUserName,jdbcType=VARCHAR},
+      C_USER_MOBILE = #{cUserMobile,jdbcType=CHAR},
+      N_REG_FLAG = #{nRegFlag,jdbcType=DECIMAL},
+      N_AGENT_FLAG = #{nAgentFlag,jdbcType=DECIMAL},
+      N_PERSONAL_FLAG = #{nPersonalFlag,jdbcType=DECIMAL},
+      N_CERT_STATUS = #{nCertStatus,jdbcType=DECIMAL}
+    where C_ID = #{cId,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lecar.freecar.mapper.demo.CorpMapper">
+  <resultMap id="BaseResultMap" type="com.lecar.freecar.model.demo.Corp">
+    <id column="C_ID" jdbcType="CHAR" property="cId" />
+    <result column="C_CORP_ID" jdbcType="CHAR" property="cCorpId" />
+    <result column="C_BUS_REGISCODE" jdbcType="CHAR" property="cBusRegiscode" />
+    <result column="V_LEGAL_NAME" jdbcType="VARCHAR" property="vLegalName" />
+    <result column="V_LEGAL_IDCARD" jdbcType="CHAR" property="vLegalIdcard" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    C_ID, C_CORP_ID, C_BUS_REGISCODE, V_LEGAL_NAME, V_LEGAL_IDCARD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from HT_CONTRACT_CORP_INFO
+    where C_ID = #{cId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from HT_CONTRACT_CORP_INFO
+    where C_ID = #{cId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lecar.freecar.model.demo.Corp">
+    insert into HT_CONTRACT_CORP_INFO (C_ID, C_CORP_ID, C_BUS_REGISCODE, 
+      V_LEGAL_NAME, V_LEGAL_IDCARD)
+    values (#{cId,jdbcType=CHAR}, #{cCorpId,jdbcType=CHAR}, #{cBusRegiscode,jdbcType=CHAR}, 
+      #{vLegalName,jdbcType=VARCHAR}, #{vLegalIdcard,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lecar.freecar.model.demo.Corp">
+    insert into HT_CONTRACT_CORP_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        C_ID,
+      </if>
+      <if test="cCorpId != null">
+        C_CORP_ID,
+      </if>
+      <if test="cBusRegiscode != null">
+        C_BUS_REGISCODE,
+      </if>
+      <if test="vLegalName != null">
+        V_LEGAL_NAME,
+      </if>
+      <if test="vLegalIdcard != null">
+        V_LEGAL_IDCARD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=CHAR},
+      </if>
+      <if test="cCorpId != null">
+        #{cCorpId,jdbcType=CHAR},
+      </if>
+      <if test="cBusRegiscode != null">
+        #{cBusRegiscode,jdbcType=CHAR},
+      </if>
+      <if test="vLegalName != null">
+        #{vLegalName,jdbcType=VARCHAR},
+      </if>
+      <if test="vLegalIdcard != null">
+        #{vLegalIdcard,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lecar.freecar.model.demo.Corp">
+    update HT_CONTRACT_CORP_INFO
+    <set>
+      <if test="cCorpId != null">
+        C_CORP_ID = #{cCorpId,jdbcType=CHAR},
+      </if>
+      <if test="cBusRegiscode != null">
+        C_BUS_REGISCODE = #{cBusRegiscode,jdbcType=CHAR},
+      </if>
+      <if test="vLegalName != null">
+        V_LEGAL_NAME = #{vLegalName,jdbcType=VARCHAR},
+      </if>
+      <if test="vLegalIdcard != null">
+        V_LEGAL_IDCARD = #{vLegalIdcard,jdbcType=CHAR},
+      </if>
+    </set>
+    where C_ID = #{cId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lecar.freecar.model.demo.Corp">
+    update HT_CONTRACT_CORP_INFO
+    set C_CORP_ID = #{cCorpId,jdbcType=CHAR},
+      C_BUS_REGISCODE = #{cBusRegiscode,jdbcType=CHAR},
+      V_LEGAL_NAME = #{vLegalName,jdbcType=VARCHAR},
+      V_LEGAL_IDCARD = #{vLegalIdcard,jdbcType=CHAR}
+    where C_ID = #{cId,jdbcType=CHAR}
+  </update>
+</mapper>
