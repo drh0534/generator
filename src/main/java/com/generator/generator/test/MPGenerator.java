@@ -10,19 +10,25 @@
  */
 package com.generator.generator.test;
 
-//import com.baomidou.mybatisplus.annotation.DbType;
-//import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-//import com.baomidou.mybatisplus.core.toolkit.StringPool;
-//import com.baomidou.mybatisplus.generator.AutoGenerator;
-//import com.baomidou.mybatisplus.generator.InjectionConfig;
-//import com.baomidou.mybatisplus.generator.config.*;
-//import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
-//import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
-//import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-//import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
-//import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-//import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-//import org.apache.commons.lang3.StringUtils;
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.InjectionConfig;
+import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
+import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
+import com.baomidou.mybatisplus.generator.config.converts.OracleTypeConvert;
+import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.FileType;
+import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import org.apache.commons.lang3.StringUtils;
+
+import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,14 +43,12 @@ import java.util.Scanner;
  */
 
 public class MPGenerator {
-/*
 
-    */
-/**
+    /**
      * <p>
      * 读取控制台内容
      * </p>
-     *//*
+     */
 
     private static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
@@ -67,26 +71,33 @@ public class MPGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/extranet/src/main/java");
-        gc.setAuthor("ZXJ");
+        gc.setOutputDir(projectPath);
+        gc.setAuthor("wupeiwen");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://rm-2ze27948e2l1f0au7o.mysql.rds.aliyuncs.com:3306/tehran");
-        dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("lecarlink");
-        dsc.setPassword("lecar_db");
-        dsc.setDbType(DbType.MYSQL).setTypeConvert(new MySqlTypeConvert(){
-            */
-/**
+//        dsc.setUrl("jdbc:mysql://rm-2ze27948e2l1f0au7o.mysql.rds.aliyuncs.com:3306/tehran");
+//        dsc.setSchemaName("public");
+//        dsc.setDriverName("com.mysql.jdbc.Driver");
+//        dsc.setUsername("lecarlink");
+//        dsc.setPassword("lecar_db");
+
+
+        dsc.setUrl("jdbc:oracle:thin:@192.168.1.2:1521:orcl");
+        dsc.setSchemaName("orcl");
+        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
+        dsc.setUsername("LCYW");
+        dsc.setPassword("LCYW");
+        dsc.setDbType(DbType.ORACLE).setTypeConvert(new OracleTypeConvert() {
+
+            /**
              * 自定义类型转换
              * @param globalConfigcom
              * @param fieldType
              * @return
-             *//*
+             */
 
             @Override
             public IColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
@@ -124,8 +135,8 @@ public class MPGenerator {
                 return projectPath + "/extranet/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
-        */
-/*
+
+
         cfg.setFileCreate(new IFileCreate() {
             @Override
             public boolean isCreate(ConfigBuilder configBuilder, FileType fileType, String filePath) {
@@ -134,7 +145,6 @@ public class MPGenerator {
                 return false;
             }
         });
-        *//*
 
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
@@ -167,7 +177,7 @@ public class MPGenerator {
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }
-*/
+
 
 }
 

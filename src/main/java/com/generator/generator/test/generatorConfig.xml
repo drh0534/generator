@@ -15,7 +15,7 @@
 			connectionURL="jdbc:mysql://192.168.102.53:3306/ito" userId="wing"
 			password="root">
 		</jdbcConnection>-->
-		<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.2:1521:dpon" userId="GBS_PRE" password="GBS_PRE">
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.2:1521:orcl" userId="LCYW" password="LCYW">
 
 		<!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://localhost:1433;DatabaseName=dbo" userId="sa" password="123456">-->
 
@@ -56,7 +56,8 @@
 		<!--<table schema="" tableName="applicant" domainObjectName="Applicant"></table>
 		<table schema="" tableName="applicant_flow_info" domainObjectName="Applicant_flow_info"></table>
 		-->
-		<table tableName="T_AUTH_SYS_QUERY_TEMPLATE_COLS" domainObjectName="BlickList" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<table tableName="KA_CUSTOMER_ORDER" domainObjectName="KaCustomerOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<table tableName="T_LK_PAYMENT_FLOW" domainObjectName="LkPaymentFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 		<!--<table tableName="CFC_CAPITALFLOW" domainObjectName="CapintaFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
 
 		<!--去掉Mybatis Generator生成的一堆 example
