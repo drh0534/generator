@@ -9,30 +9,30 @@
  * 作者姓名           修改时间           版本号              描述
  */
 package com.generator.generator.test;
-
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
-import com.baomidou.mybatisplus.generator.config.converts.OracleTypeConvert;
-import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
-import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-import com.baomidou.mybatisplus.generator.config.rules.FileType;
-import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
-import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import org.apache.commons.lang3.StringUtils;
-
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-import com.baomidou.mybatisplus.generator.AutoGenerator;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+//
+//import com.baomidou.mybatisplus.annotation.DbType;
+//import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
+//import com.baomidou.mybatisplus.core.toolkit.StringPool;
+//import com.baomidou.mybatisplus.generator.AutoGenerator;
+//import com.baomidou.mybatisplus.generator.InjectionConfig;
+//import com.baomidou.mybatisplus.generator.config.*;
+//import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
+//import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
+//import com.baomidou.mybatisplus.generator.config.converts.OracleTypeConvert;
+//import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
+//import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+//import com.baomidou.mybatisplus.generator.config.rules.FileType;
+//import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
+//import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+//import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+//import org.apache.commons.lang3.StringUtils;
+//
+//import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
+//import com.baomidou.mybatisplus.generator.AutoGenerator;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Scanner;
 
 /**
  * 〈 Mybatis Plus 自动代码生成〉
@@ -43,12 +43,15 @@ import java.util.Scanner;
  */
 
 public class MPGenerator {
+/*
 
-    /**
+    */
+/**
      * <p>
      * 读取控制台内容
      * </p>
-     */
+     *//*
+
 
     private static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
@@ -92,12 +95,14 @@ public class MPGenerator {
         dsc.setPassword("LCYW");
         dsc.setDbType(DbType.ORACLE).setTypeConvert(new OracleTypeConvert() {
 
-            /**
+            */
+/**
              * 自定义类型转换
              * @param globalConfigcom
              * @param fieldType
              * @return
-             */
+             *//*
+
 
             @Override
             public IColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
@@ -178,6 +183,7 @@ public class MPGenerator {
         mpg.execute();
     }
 
+*/
 
 }
 

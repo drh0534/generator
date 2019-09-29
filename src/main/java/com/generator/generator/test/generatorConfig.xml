@@ -56,8 +56,8 @@
 		<!--<table schema="" tableName="applicant" domainObjectName="Applicant"></table>
 		<table schema="" tableName="applicant_flow_info" domainObjectName="Applicant_flow_info"></table>
 		-->
-		<table tableName="KA_CUSTOMER_ORDER" domainObjectName="KaCustomerOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="T_LK_PAYMENT_FLOW" domainObjectName="LkPaymentFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<table tableName="DP_TRANSPORT_TEMPTRUCK_INFO" domainObjectName="DpTransportTempTruckInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<!--<table tableName="T_LK_PAYMENT_FLOW" domainObjectName="LkPaymentFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
 		<!--<table tableName="CFC_CAPITALFLOW" domainObjectName="CapintaFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
 
 		<!--去掉Mybatis Generator生成的一堆 example

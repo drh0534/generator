@@ -10,8 +10,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2ze27948e2l1f0au7o.mysql.rds.aliyuncs.com:3306/tehran?user=lecarlink;password=lecar_db;useUnicode=true;characterEncoding=utf8;autoReconnect=true" userId="lecarlink" password="lecar_db">
-        <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.2:1521:dpon" userId="GBS_PRE" password="GBS_PRE">-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2ze27948e2l1f0au7o.mysql.rds.aliyuncs.com:3306/tehran?user=lecarlink;password=lecar_db;useUnicode=true;characterEncoding=utf8;autoReconnect=true" userId="lecarlink" password="lecar_db">-->
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.2:1521:orcl" userId="LCYW" password="LCYW">
         </jdbcConnection>
         <javaTypeResolver>
             <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
@@ -36,10 +36,15 @@
         <!--<table tableName="DP_LINE_OPENED" domainObjectName="Line" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <!--<table tableName="DP_TRANSPORT_PAY_FLOW" domainObjectName="TransportPay" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <!--<table tableName="DP_FOSS_VEHICLE" domainObjectName="FossVehicle" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-        <table tableName="zb_order_info" domainObjectName="zbOrderInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="zb_transcation_info" domainObjectName="zbTranscationInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!--<table tableName="zb_order_info" domainObjectName="zbOrderInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="zb_transcation_info" domainObjectName="zbTranscationInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <!--<table tableName="HT_CONTRACT_CORP_INFO" domainObjectName="Corp" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <!--<table tableName="HT_CONTRACT_SSQCERT_INFO" domainObjectName="Ssqcert" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+        <table tableName="T_LK_MESSAGE_LOG" domainObjectName="LKMessageLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnRenamingRule searchString="^[^_]+" replaceString=""/>
+            <!--<columnRenamingRule searchString="^C" replaceString=""/>-->
+            <!--<columnRenamingRule searchString="^N" replaceString=""/>-->
+        </table>
 
 
     </context>
