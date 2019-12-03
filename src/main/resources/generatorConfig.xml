@@ -13,7 +13,9 @@
         <!--数据库链接URL，用户名、密码 -->
         <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-2ze27948e2l1f0au7o.mysql.rds.aliyuncs.com:3306/tehran?user=lecarlink;password=lecar_db;useUnicode=true;characterEncoding=utf8;autoReconnect=true" userId="lecarlink" password="lecar_db">-->
         <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.2:1521:orcl" userId="LCYW" password="LCYW">
+            <property name="remarksReporting" value="true"></property>
         </jdbcConnection>
+
         <javaTypeResolver>
             <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
             <property name="forceBigDecimals" value="false"/>
